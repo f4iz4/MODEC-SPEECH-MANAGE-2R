@@ -1,0 +1,49 @@
+body {
+  background-color: black;
+  color: gold;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  height: 120px;
+  object-fit: contain;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tab-button:hover {
+  background-color: #c6a700;
+}
+
+.section {
+  display: none;
+  padding: 20px;
+}
+
+.section.visible {
+  display: block;
+}
+
+/* Add other styles as needed */
