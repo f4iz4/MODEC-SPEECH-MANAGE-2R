@@ -1,48 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conference Timer System</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MODEC SPEECH MANAGER</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="logo-container">
-    <img src="logo.png" alt="Conference Logo" class="logo">
+
+  <h1>MODEC SPEECH MANAGER</h1>
+
+  <!-- Country Speaking Section -->
+  <button onclick="toggleSection('countrySection')"> Commision</button>
+  <div id="countrySection" class="section">
+    <label>Select Country:</label>
+    <select id="countrySelect" onchange="updateFlag()">
+      <option value="id">Indonesia</option>
+      <option value="tr">Turkey</option>
+      <option value="ng">Nigeria</option>
+    </select>
+
+    <!-- Flag Display -->
+    <div id="flagDisplay" class="flag-display">
+      <img id="flagImage" src="" alt="Flag"/>
+    </div>
+
+    <label>Set Time (minutes):</label>
+    <input type="number" id="countryTimeInput" min="1" />
+
+    <button onclick="startTimer('country')">▶️ Start</button>
+    <button onclick="pauseTimer('country')">⏸ Pause</button>
+    <button onclick="resumeTimer('country')">▶ Resume</button>
+
+    <div id="countryTimerDisplay">Time Left: 0:00</div>
   </div>
 
-  <div class="tab-container">
-    <button class="tab-button" onclick="showSection('delegate')">Delegate Speaking</button>
-    <button class="tab-button" onclick="showSection('reason')">Reason Entry</button>
-    <button class="tab-button" onclick="showSection('admin')">Admin Section</button>
+  <!-- Admin Reason Section -->
+  <button onclick="toggleSection('reasonSection')">Council</button>
+  <div id="reasonSection" class="section">
+    <textarea id="adminReason" placeholder="Reason for speech..."></textarea>
+    <input type="number" id="reasonTimeInput" placeholder="Time Limit (minutes)" />
+
+    <button onclick="startTimer('reason')">▶️ Start</button>
+    <button onclick="pauseTimer('reason')">⏸ Pause</button>
+    <button onclick="resumeTimer('reason')">▶ Resume</button>
+
+    <div id="reasonTimerDisplay">Time Left: 0:00</div>
   </div>
 
-  <div id="delegate" class="section hidden">
-    <!-- Delegate section content here -->
-  </div>
+  <!-- Final Admin Section -->
+  <button onclick="toggleSection('finalSection')">Summit</button>
+  <div id="finalSection" class="section">
+    <textarea id="finalCountries" placeholder="Countries Speaking..."></textarea>
+    <input type="number" id="finalTimeInput" placeholder="Time Limit (minutes)" />
 
-  <div id="reason" class="section hidden">
-    <!-- Reason section content here -->
-  </div>
+    <button onclick="startTimer('final')">▶️ Start</button>
+    <button onclick="pauseTimer('final')">⏸ Pause</button>
+    <button onclick="resumeTimer('final')">▶ Resume</button>
 
-  <div id="admin" class="section hidden">
-    <!-- Admin section content here -->
+    <div id="finalTimerDisplay">Time Left: 0:00</div>
   </div>
 
   <script src="script.js"></script>
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
